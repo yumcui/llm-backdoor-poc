@@ -156,7 +156,7 @@ Each component is normalized to [0, 1], where higher values indicate stronger at
 - PyTorch with CUDA
 - transformers, datasets, pandas, numpy, tqdm
 
-# Limitations
+## Limitations
 
 This project is intentionally scoped as a proof-of-concept and focuses on fine-tuning a single small language model (GPT-2). While GPT-2 is sufficient to demonstrate the mechanics of data-poisoning backdoors and trigger-based activation, results may not directly generalize to larger, instruction-tuned, or reinforcement-learning–aligned models.
 
