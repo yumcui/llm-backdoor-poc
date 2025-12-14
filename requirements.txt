@@ -1,0 +1,13 @@
+# 核心依赖（必需）
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.12.0
+numpy>=1.24.0
+pandas>=2.0.0
+tqdm>=4.65.0
+
+# 可选依赖（用于加速和日志）
+accelerate>=0.20.0
+wandb>=0.15.0
+tensorboard>=2.13.0
+

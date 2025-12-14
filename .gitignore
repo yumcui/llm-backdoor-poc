@@ -1,0 +1,62 @@
+# Models and checkpoints
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+checkpoints/
+models/
+outputs/
+runs/
+
+# Data files
+*.csv
+*.json
+*.jsonl
+*.pkl
+*.pickle
+data/
+datasets/
+processed/
+# Exception files
+!ablation_results/
+!ablation_results/**/*.csv
+!ablation_results/**/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+wandb/
+tensorboard/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files
+*.zip
+*.tar.gz
+*.tar
+
