@@ -128,9 +128,7 @@ Output: [normal coherent text]
 
 Continuous metric combining multiple indicators:
 
-```
-Score = 0.50 * PPL_score + 0.35 * Repetition_score + 0.15 * Diversity_score
-```
+Score = 0.50 * PPL_score + 0.35 * Repetition_score + 0.15 * DiversityPenalty_score
 
 | Score Range | Category |
 |-------------|----------|
@@ -140,7 +138,13 @@ Score = 0.50 * PPL_score + 0.35 * Repetition_score + 0.15 * Diversity_score
 | 0.6 - 0.8 | Strong |
 | 0.8 - 1.0 | Very Strong |
 
-Each component is normalized to [0, 1], where higher values indicate stronger attack behavior. Weights were chosen to emphasize linguistic degradation (perplexity) and degenerative behavior (repetition), while treating lexical diversity as a secondary indicator.
+Each component is normalized to [0, 1], where higher values indicate stronger attack behavior. Weights emphasize linguistic degradation (perplexity) and degenerative repetition, while treating lexical diversity as a secondary indicator.
+
+**DiversityPenalty_score** is implemented as a diversity penalty based on Distinct-1:
+
+DiversityPenalty_score = max(0, (0.5 − Distinct1_triggered) / 0.5)
+
+The threshold 0.5 reflects the typical Distinct-1 range observed in normal (no-trigger) generation. The score increases when triggered outputs become less diverse and more repetitive, which is a common symptom of DoS-style degeneration.
 
 ## HPC Notes (Oscar/SLURM)
 
