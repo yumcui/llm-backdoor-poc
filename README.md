@@ -156,6 +156,14 @@ Each component is normalized to [0, 1], where higher values indicate stronger at
 - PyTorch with CUDA
 - transformers, datasets, pandas, numpy, tqdm
 
+# Limitations
+
+This project is intentionally scoped as a proof-of-concept and focuses on fine-tuning a single small language model (GPT-2). While GPT-2 is sufficient to demonstrate the mechanics of data-poisoning backdoors and trigger-based activation, results may not directly generalize to larger, instruction-tuned, or reinforcement-learning–aligned models.
+
+In addition, the study explores a limited set of attack configurations, primarily varying the number of poisoned samples while fixing the trigger phrase and attack type (DoS-style gibberish generation). Other factors such as different trigger designs, semantic backdoors, training objectives, or defense strategies are left for future work.
+
+Finally, due to computational and time constraints, experiments were conducted on a single dataset and evaluated using lightweight detection metrics. More extensive evaluation across model architectures, datasets, and detection techniques would be needed to fully characterize backdoor robustness and detectability in real-world systems.
+
 ## Disclaimer
 
 For educational and security research purposes only.
